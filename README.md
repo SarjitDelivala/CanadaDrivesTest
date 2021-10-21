@@ -19,22 +19,22 @@ This Project is created for an interview process. This is only API Project.
 
 # Test APIs
 
-APIs can be tested using `[Postman](https://www.postman.com/downloads/)`
+APIs can be tested using [Postman](https://www.postman.com/downloads/)
 
-## 1. List of Players (LeaderBoard)
+### 1. List of Players (LeaderBoard)
 - Method `GET`
 - Endpoint `/api/players`
 - Response: LeaderBoard based on Points scored by the players
 
 
-## 2. Show Player Details
+### 2. Show Player Details
 - Method `GET`
 - Endpoint `/api/players/{player}`
 - URL Param:
     - player: Player's id (integer / required)
 - Response: Player details
 
-## 3. Create Player
+### 3. Create Player
 - Method `POST`
 - Endpoint `/api/players`
 - Request: 
@@ -43,7 +43,7 @@ APIs can be tested using `[Postman](https://www.postman.com/downloads/)`
   - `address` (string / required / max 100 characters)
 - Response: New Player Details
 
-## 4. Update Player
+### 4. Update Player
 - Method `PATCH`
 - Endpoint `/api/players/{player}`
 - URL Param:
@@ -55,7 +55,7 @@ APIs can be tested using `[Postman](https://www.postman.com/downloads/)`
   - `address` (string / optional / max 100 characters)
 - Response: Updated Player details
 
-## 5. Increment / Decrement Points
+### 5. Increment / Decrement Points
 - Method `PATCH`
 - Endpoint `/api/players/{player}/{action}`
 - URL Param:
@@ -64,7 +64,7 @@ APIs can be tested using `[Postman](https://www.postman.com/downloads/)`
 - Response: LeaderBoard based on Points scored by the players
 
 
-## 6. Delete Player
+### 6. Delete Player
 - Method `DELETE`
 - Endpoint `/api/players/{player}`
 - URL Param:
