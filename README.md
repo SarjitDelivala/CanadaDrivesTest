@@ -1,65 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# About Project
 
-## About Laravel
+This Project is created for an interview process. This is only API Project. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Setup Project on your Local
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Clone the project using `git clone` command.
+- Go to directory and execute `composer install`.
+- Execute `php artisan serve`
 
-## Learning Laravel
+# Test APIs
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+APIs can be tested using `[Postman](https://www.postman.com/downloads/)`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 1. List of Players (LeaderBoard)
+- Method `GET`
+- Endpoint `/api/players`
+- Response: LeaderBoard based on Points scored by the players
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 2. Show Player Details
+- Method `GET`
+- Endpoint `/api/players/{player}`
+- URL Param:
+    - player: Player's id (integer / required)
+- Response: Player details
 
-### Premium Partners
+## 3. Create Player
+- Method `POST`
+- Endpoint `/api/players`
+- Request: 
+  - `name` (string / required / max 50 characters)
+  - `age` (integer / required / min 1 / max 100)
+  - `address` (string / required / max 100 characters)
+- Response: New Player Details
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 4. Update Player
+- Method `PATCH`
+- Endpoint `/api/players/{player}`
+- URL Param:
+    - player: Player's id (integer / required)
+- Request:
+  - `name` (string / optional / max 50 characters)
+  - `age` (integer / optional / min 1 / max 100)
+  - `points` (integer / optional / min 0)
+  - `address` (string / optional / max 100 characters)
+- Response: Updated Player details
 
-## Contributing
+## 5. Increment / Decrement Points
+- Method `PATCH`
+- Endpoint `/api/players/{player}/{action}`
+- URL Param:
+  - player: Player's id (integer / required)
+  - action: (string / required) Possible values [increment / decrement]
+- Response: LeaderBoard based on Points scored by the players
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 6. Delete Player
+- Method `DELETE`
+- Endpoint `/api/players/{player}`
+- URL Param:
+    - player: Player's id (integer / required)
+- Response: Success Message

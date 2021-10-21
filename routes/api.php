@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::apiResource('players', \App\Http\Controllers\Api\PlayerController::class);
+
+Route::patch('/players/{player}/{action}', [\App\Http\Controllers\Api\PlayerController::class, 'updatePoints']);
