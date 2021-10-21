@@ -8,6 +8,13 @@ This Project is created for an interview process. This is only API Project.
 
 - Clone the project using `git clone` command.
 - Go to directory and execute `composer install`.
+- Create `.env` file and copy all content from `.env.example`.
+- Create a MySQL DB on your local and set the details of DB and User in `.env` file:
+  -  `DB_HOST`=127.0.0.1
+  -  `DB_PORT`=3306
+  -  `DB_DATABASE`={DB NAME HERE}
+  -  `DB_USERNAME`={USERNAME HERE}
+  -  `DB_PASSWORD`={USER PASSWORD HERE}
 - Execute `php artisan serve`
 
 # Test APIs
